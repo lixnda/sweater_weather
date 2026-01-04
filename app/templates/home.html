@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style type="text/tailwindcss">
+                @layer utilities {
+                    .content-auto {
+                        content-visibility: auto;
+                    }
+                }
+        </style>
+    </head>
+    <body class="bg-gray-100 min-h-screen p-8">
+
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 h-screen">
+
+            <div class="self-center">
+            <div class="bg-white p-8 rounded-2xl shadow-lg space-y-6 w-full">
+
+                <h1 class="text-2xl font-bold text-center text-gray-800">
+                Weather in {{ place }}
+                </h1>
+
+                <div class="flex bg-gray-50 p-4 rounded-xl">
+                    <span class="text-lg font-medium text-gray-700">Condition</span>
+                    <span class="text-lg font-semibold text-blue-600">{{ weather }}</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-xl text-center">
+                        <p class="text-gray-600 text-sm">Current Temp</p>
+                        <p class="text-xl font-bold text-gray-800">{{ temp }} F</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl text-center">
+                        <p class="text-gray-600 text-sm">Feels Like</p>
+                        <p class="text-xl font-bold text-gray-800">{{ feels_like }} F</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl text-center">
+                        <p class="text-gray-600 text-sm">Min Temp</p>
+                        <p class="text-xl font-bold text-green-600">{{ min_temp }} F</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-xl text-center">
+                        <p class="text-gray-600 text-sm">Max Temp</p>
+                        <p class="text-xl font-bold text-red-600">{{ max_temp }} F</p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="p-8 rounded-2xl shadow-lg space-y-6 w-full">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-xl text-center">
+                        <p class="text-gray-600 text-sm">Saturation Compatibility</p>
+                        <p class="text-xl font-bold text-gray-800">{{ sat_score }} %</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-4 rounded-xl text-center">
+                        <p class="text-gray-600 text-sm">Hue Compatibility</p>
+                        <p class="text-xl font-bold text-gray-800">{{ hue_score }} %</p>
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+
+            <div class="flex flex-col justify-center items-center gap-6">
+                <a href="{{linkT}}"><img src="{{ top }}" class="rounded-2xl shadow-md object-cover w-full max-h-[45vh]"/></a>
+                <a href="{{linkB}}"><img src="{{ bottom }}" class="rounded-2xl shadow-md object-cover w-full max-h-[45vh]"/></a>
+            </div>
+
+        </div>
+    </body>
+
+
+</html>
